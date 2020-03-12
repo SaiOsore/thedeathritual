@@ -1,0 +1,54 @@
+.nav {
+  @include tabletL {
+    flex: 1 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid $main;
+  }
+  &__list {
+    display: flex;
+    @include tabletL {
+      flex-direction: column;
+    }
+  }
+  &__item {
+    margin-right: 30px;
+    &:last-child {
+      margin-right: 0;
+    }
+    @include tabletL {
+      margin-bottom: 25px;
+    }
+  }
+  &__link {
+    position: relative;
+    font-size: $xxl;
+    letter-spacing: .3em;
+    color: $second;
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 0;
+      height: 10px;
+      background-color: $active;
+      transition: .4s;
+      z-index: -1;
+    }
+    &:hover:before {
+      width: 100%;
+      left: 0;
+    }
+    @include laptopL {
+      font-size: $l2;
+    }
+    @include laptop {
+      font-size: $l;
+    }
+    @include tabletL {
+      font-size: $l2;
+    }
+  }
+}

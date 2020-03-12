@@ -1,0 +1,44 @@
+extends layouts/default
+
+block variables
+  - const title = 'The Death Ritual - Albums'
+  -
+    const albums = [
+      {
+        link: '/audio.html',
+        title: 'Ritual',
+        src: '../assets/img/albums/ritual.jpg',
+        date: '2018'
+      },
+      {
+        link: '/audio.html',
+        title: 'Warzone',
+        src: '../assets/img/albums/Warzone.jpg',
+        date: '2018'
+      },
+      {
+        link: '/audio.html',
+        title: 'Zodiac',
+        src: '../assets/img/albums/Zodiac.jpg',
+        date: '2018'
+      },
+      {
+        link: '/audio.html',
+        title: 'Buried Alive',
+        src: '../assets/img/albums/BuriedAlive.jpg',
+        date: '2018'
+      },
+    ]
+
+block content
+  div(class='albums')
+    div(class='albums__wrapper')
+      h1(class='albums__title') Albums
+      div(class='albums__container')
+        for album in albums
+          a(class='album' title=`${album.title}` href=`${album.link}`)
+            div(class='album__img-wrapper')
+              img(class='album__img' src=`${album.src}` alt='album image')
+            div(class='album__descr')
+              h2(class='album__title') #{album.title}
+              p(class='album__date') #{album.date}

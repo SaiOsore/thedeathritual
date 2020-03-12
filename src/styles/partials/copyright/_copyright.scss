@@ -1,0 +1,14 @@
+.copyright {
+  color: $second;
+  font-family: 'Digital-7', serif;
+  @include tabletL {
+    font-size: $m;
+  }
+  &__link {
+    color: $accent;
+    z-index: 10;
+    &:hover {
+      color: $white;
+    }
+  }
+}

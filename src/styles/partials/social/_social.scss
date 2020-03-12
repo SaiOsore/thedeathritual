@@ -1,0 +1,94 @@
+.social {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  @include tabletL {
+    display: none;
+    position: initial;
+    top: initial;
+    left: initial;
+    right: initial;
+    transform: none;
+  }
+  &--left {
+    left: 0;
+  }
+  &--right {
+    right: 0;
+  }
+  &:hover &__links {
+    display: flex;
+  }
+  &:hover &__button:before {
+    height: 100%;
+    bottom: 0;
+  }
+  &__button {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-transform: uppercase;
+    color: $white;
+    font-family: 'Digital-7';
+    font-size: 2rem;
+    z-index: 2;
+    cursor: default;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 3px;
+      height: 0;
+      background-color: $accent;
+      z-index: -1;
+      transition: .4s;
+    }
+    @include desktop {
+      font-size: 1rem;
+    }
+    @include tabletL {
+      font-size: $l;
+    }
+  }
+  &__links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    &--left {
+      margin-left: 20px;
+    }
+    &--right {
+      margin-right: 20px;
+    }
+    @include tabletL {
+      display: flex;
+    }
+  }
+  &__link {
+    color: $white;
+    margin-bottom: 10px;
+    font-size: 2rem;
+    font-family: 'Digital-7';
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &:hover {
+      color: $accent;
+    }
+    @include desktop {
+      font-size: 1rem;
+    }
+    @include tabletL {
+      font-size: $l;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+include ../utils/mixins
+
+block variables
+
+doctype html
+html(lang='en')
+  head
+    include ../blocks/base/head
+  body
+    include ../blocks/preloader/preloader
+    include ../blocks/header/header
+    include ../blocks/popup/popup-download
+    include ../blocks/listen/listen
+    include ../blocks/social/social
+    .container
+      block content
+    include ../blocks/footer/footer
+    include ../blocks/base/scripts

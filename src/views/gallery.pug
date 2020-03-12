@@ -1,0 +1,42 @@
+extends layouts/default
+
+block variables
+  - const title = 'The Death Ritual - Gallery'
+  -
+    const gallery = [
+      {
+        src: '../assets/img/gallery/1.0.jpg',
+        alt: 'Sai in old mask'
+      },
+      {
+        src: '../assets/img/gallery/13.jpg',
+        alt: 'hands 13'
+      },
+      {
+        src: '../assets/img/gallery/200.jpg',
+        alt: 'Sai and Zombie'
+      },
+      {
+        src: '../assets/img/gallery/greyLogo.jpg',
+        alt: 'grey Logo'
+      },
+      {
+        src: '../assets/img/gallery/ny.jpg',
+        alt: 'New Year'
+      },
+      {
+        src: '../assets/img/gallery/sigil.jpg',
+        alt: 'red sigil'
+      },
+    ]
+
+block content
+  div(class='gallery')
+    div(class='gallery__wrapper')
+      h1(class='gallery__title') gallery
+      div(class='gallery__container')
+        for block in gallery
+          div(class='gallery__block')
+            div(class='gallery__img-wrapper')
+              img(class='gallery__img' src=`${block.src}` alt=`${block.alt}`)
+

@@ -1,0 +1,12 @@
+extends layouts/default
+
+block variables
+  - const title = 'The Death Ritual - industrial death metal band from Ukraine'
+
+block content
+  div(class='home' data-page='home')
+    div(class='home__wrapper')
+    canvas(class='home__canvas')
+    div(class='home__img-container')
+      div(class='home__img' style='background-image:url("../assets/img/home/Sai.png")')
+      div(class='home__img' style='background-image:url("../assets/img/home/Zombie.png"); display: none;')

@@ -1,0 +1,51 @@
+.albums {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $black;
+  @extend .container-padding;
+  &__wrapper {
+    width: 70%;
+    margin: 0 auto;
+    z-index: 2;
+    @include tabletL {
+      width: 70%;
+    }
+  }
+  &__title {
+    margin-bottom: 50px;
+  }
+  &__container {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(220px, 1fr) );
+    grid-gap: 20px;
+  }
+}
+
+.album {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  &__img-wrapper {
+    min-height: 220px;
+  }
+  &__img {
+    display: block;
+    max-width: 100%;
+    margin-bottom: 5px;
+  }
+  &__descr {
+    color: $white;
+  }
+  &__title {
+    margin-bottom: 10px;
+  }
+  &__date {
+    font-family: 'Digital-7';
+  }
+}

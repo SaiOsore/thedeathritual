@@ -1,0 +1,23 @@
+//colors
+$black: #000;
+$black-light: lighten($black, 10%);
+$black-dark: lighten($black, 6%);
+$white: #fff;
+$main: #2B2227; //raisin black
+$main-dark: darken($main, 16%);
+$accent: #B20014; //crimson
+$second: #6D6D6D; //dim gray
+$active: #60000B; //rosewood
+$gradient: linear-gradient(left, #c5d2d3 0%,#475b5d 51%,#475b5d 51%,#1e2626 100%);
+$shadow-down: 0px 10px 22px 0px rgba(0,0,0,0.75);
+
+//size
+$xxs: 11px;
+$xs: 12px;
+$s: 13px;
+$m: 14px;
+$l: 16px;
+$l2: 18px;
+$xl: 20px;
+$xxl: 24px;
+$xxxl: 32px;

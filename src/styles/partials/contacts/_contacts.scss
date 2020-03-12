@@ -1,0 +1,58 @@
+.contacts {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $black;
+  font-size: 2rem;
+  @extend .container-padding;
+  @include tabletL {
+    font-size: 1rem;
+  }
+  &__wrapper {
+    width: 70%;
+    margin: 0 auto;
+    z-index: 2;
+    @include tabletL {
+      width: 70%;
+    }
+  }
+  &__main {
+    margin-bottom: 50px;
+  }
+  &__title {
+    margin-bottom: 10px;
+  }
+  &__offer {
+    font-family: 'Digital-7';
+    font-size: 2rem;
+    @include tabletL {
+      font-size: 1rem;
+    }
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
+  &__info-title {
+    margin-bottom: 10px;
+  }
+  &__email {
+    color: $accent;
+    font-size: 2rem;
+    font-family: 'Digital-7';
+    &:hover {
+      opacity: .4;
+    }
+    @include tablet {
+      font-size: 1.2rem;
+    }
+    @include mobileL {
+      font-size: $l2;
+    }
+  }
+}

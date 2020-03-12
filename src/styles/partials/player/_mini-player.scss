@@ -1,0 +1,42 @@
+.mini-player {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: none;
+  &__button {
+    padding: .3em;
+    z-index: 10;
+    & svg {
+      width: 20px;
+      height: 20px;
+      & path {
+        transition: fill .3s;
+      }
+    }
+    &:hover svg path {
+      fill: $accent;
+    }
+    &--active {
+      & .mini-player__play {
+        display: none;
+        opacity: 0;
+      }
+      & .mini-player__pause {
+        display: block;
+        opacity: 1;
+      }
+    }
+  }
+  &__play {
+    & path {
+      fill: $white;
+    }
+  }
+  &__pause {
+    display: none;
+    opacity: 0;
+    & path {
+      fill: $accent;
+    }
+  }
+}
