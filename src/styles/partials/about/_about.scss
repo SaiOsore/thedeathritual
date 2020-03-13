@@ -1,17 +1,17 @@
 .about {
-  @extend .content;
-  &__bio {
+  @extend .page;
+  &__container {
+    @extend .page__container;
     width: 50%;
-    margin: 0 auto;
-    z-index: 2;
     @include tabletL {
       width: 70%;
     }
   }
   &__title {
-    margin-bottom: 50px;
+    @extend .title;
   }
   &__descr {
+    font-size: 1rem;
     margin-bottom: 20px;
   }
   &__img-wrapper {

@@ -36,7 +36,7 @@
     text-transform: uppercase;
     color: $white;
     font-family: 'Digital-7';
-    font-size: 2rem;
+    font-size: 1.2rem;
     z-index: 2;
     cursor: default;
     &:before {
@@ -50,12 +50,6 @@
       background-color: $accent;
       z-index: -1;
       transition: .4s;
-    }
-    @include desktop {
-      font-size: 1rem;
-    }
-    @include tabletL {
-      font-size: $l;
     }
   }
   &__links {
@@ -76,19 +70,13 @@
   &__link {
     color: $white;
     margin-bottom: 10px;
-    font-size: 2rem;
+    font-size: 1.2rem;
     font-family: 'Digital-7';
     &:last-child {
       margin-bottom: 0;
     }
     &:hover {
       color: $accent;
-    }
-    @include desktop {
-      font-size: 1rem;
-    }
-    @include tabletL {
-      font-size: $l;
     }
   }
 }

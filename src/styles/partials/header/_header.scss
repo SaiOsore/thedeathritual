@@ -55,8 +55,8 @@
   display: none;
   @include tabletL {
     display: flex;
-    width: 25px;
-    height: 25px;
+    width: 2rem;
+    height: 2rem;
     flex-direction: column;
     justify-content: space-between;
     cursor: pointer;

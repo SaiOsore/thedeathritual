@@ -1,9 +1,7 @@
 .copyright {
   color: $second;
   font-family: 'Digital-7', serif;
-  @include tabletL {
-    font-size: $m;
-  }
+  font-size: 1rem;
   &__link {
     color: $accent;
     z-index: 10;

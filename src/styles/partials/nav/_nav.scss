@@ -1,11 +1,11 @@
 .nav {
-  padding-bottom: 10px;
   @include tabletL {
     flex: 1 0 0;
     display: flex;
     align-items: center;
     justify-content: center;
     border-bottom: 2px solid $main;
+    padding-bottom: 10px;
   }
   &__list {
     display: flex;
@@ -14,7 +14,7 @@
     }
   }
   &__item {
-    margin-right: 30px;
+    margin-right: 2em;
     &:last-child {
       margin-right: 0;
     }
@@ -27,7 +27,7 @@
   }
   &__link {
     position: relative;
-    font-size: $xxl;
+    font-size: 1.2rem;
     letter-spacing: .3em;
     color: $second;
     &:before {
@@ -46,13 +46,10 @@
       left: 0;
     }
     @include laptopL {
-      font-size: $l2;
-    }
-    @include laptop {
-      font-size: $l;
+      font-size: 1rem;
     }
     @include tabletL {
-      font-size: $l2;
+      font-size: 1.3rem;
     }
   }
 }

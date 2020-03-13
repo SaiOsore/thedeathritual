@@ -32,9 +32,9 @@ block variables
 
 block content
   div(class='albums')
-    div(class='albums__wrapper')
+    div(class='albums__container')
       h1(class='albums__title') Albums
-      div(class='albums__container')
+      div(class='albums__content')
         for album in albums
           a(class='album' title=`${album.title}` href=`${album.link}`)
             div(class='album__img-wrapper')

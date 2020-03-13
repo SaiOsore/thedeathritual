@@ -1,18 +1,13 @@
 .videos {
-  @extend .content;
+  @extend .page;
   flex-direction: column;
-  &__wrapper {
-    width: 70%;
-    margin: 0 auto;
-    z-index: 2;
-    @include tabletL {
-      width: 70%;
-    }
+  &__container {
+    @extend .page__container;
   }
   &__title {
-    margin-bottom: 50px;
+    @extend .title;
   }
-  &__container {
+  &__content {
     margin: 0;
     display: grid;
     grid-template-columns: 1fr 1fr;

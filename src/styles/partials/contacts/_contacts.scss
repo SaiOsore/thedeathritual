@@ -1,21 +1,13 @@
 .contacts {
-  @extend .content;
-  font-size: 2rem;
-  @include tabletL {
-    font-size: 1rem;
-  }
-  &__wrapper {
-    width: 70%;
-    margin: 0 auto;
-    z-index: 2;
-    @include tabletL {
-      width: 70%;
-    }
+  @extend .page;
+  &__container {
+    @extend .page__container;
   }
   &__main {
     margin-bottom: 50px;
   }
   &__title {
+    @extend .title;
     margin-bottom: 10px;
   }
   &__offer {

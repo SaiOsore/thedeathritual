@@ -24,9 +24,9 @@ block variables
 
 block content
   div(class='videos')
-    div(class='videos__wrapper')
+    div(class='videos__container')
       h1(class='videos__title') videos
-      div(class='videos__container')
+      div(class='videos__content')
         for video in videos
           div(class='video')
             a(class='video__link' href=`https://youtu.be/${video.src}` target='_blanc')

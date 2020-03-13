@@ -1,17 +1,12 @@
 .albums {
-  @extend .content;
-  &__wrapper {
-    width: 70%;
-    margin: 0 auto;
-    z-index: 2;
-    @include tabletL {
-      width: 70%;
-    }
+  @extend .page;
+  &__container {
+    @extend .page__container;
   }
   &__title {
-    margin-bottom: 50px;
+    @extend .title;
   }
-  &__container {
+  &__content {
     display: grid;
     grid-template-columns: repeat( auto-fit, minmax(220px, 1fr) );
     grid-gap: 20px;

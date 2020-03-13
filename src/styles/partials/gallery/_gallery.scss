@@ -1,18 +1,13 @@
 .gallery {
-  @extend .content;
+  @extend .page;
   flex-direction: column;
-  &__wrapper {
-    width: 70%;
-    margin: 0 auto;
-    z-index: 2;
-    @include tabletL {
-      width: 70%;
-    }
+  &__container {
+    @extend .page__container;
   }
   &__title {
-    margin-bottom: 50px;
+    @extend .title;
   }
-  &__container {
+  &__content {
     height: auto;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
