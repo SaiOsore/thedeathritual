@@ -1,13 +1,6 @@
 .videos {
-  width: 100%;
-  min-height: 100vh;
-  position: relative;
-  z-index: 2;
-  display: flex;
+  @extend .content;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  @extend .container-padding;
   &__wrapper {
     width: 70%;
     margin: 0 auto;

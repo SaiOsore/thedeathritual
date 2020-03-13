@@ -1,4 +1,5 @@
 .nav {
+  padding-bottom: 10px;
   @include tabletL {
     flex: 1 0 0;
     display: flex;
@@ -18,7 +19,10 @@
       margin-right: 0;
     }
     @include tabletL {
-      margin-bottom: 25px;
+      margin-bottom: 10px;
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
   &__link {

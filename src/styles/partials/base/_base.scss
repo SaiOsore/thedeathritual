@@ -71,6 +71,19 @@ video {
   margin: 0 auto;
 }
 
+.content {
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $black;
+  @extend .container-padding;
+}
+
 .container-padding {
   padding: 20vh 0 15vh 0;
 }
@@ -84,6 +97,9 @@ video {
     z-index: 2;
     pointer-events: none;
     height: 240px;
+    @include tabletL {
+      height: 120px;
+    }
   }
   &:before {
     top: 0;
