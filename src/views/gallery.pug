@@ -6,83 +6,103 @@ block variables
     const gallery = [
       {
         src: '../assets/img/gallery/1.0.jpg',
-        alt: 'Sai in old mask'
+        alt: 'Sai in old mask',
+        class: 'gallery__block--v'
       },
       {
         src: '../assets/img/gallery/13.jpg',
-        alt: 'hands 13'
+        alt: 'hands 13',
+        class: ''
       },
       {
         src: '../assets/img/gallery/200.jpg',
-        alt: 'Sai and Zombie'
+        alt: 'Sai and Zombie',
+        class: 'gallery__block--h'
       },
       {
         src: '../assets/img/gallery/greyLogo.jpg',
-        alt: 'grey Logo'
+        alt: 'grey Logo',
+        class: 'gallery__block--h'
       },
       {
         src: '../assets/img/gallery/BW2.jpg',
-        alt: 'black and white photo'
+        alt: 'black and white photo',
+        class: ''
       },
       {
         src: '../assets/img/gallery/forest.jpg',
-        alt: 'Sai in the forest'
+        alt: 'Sai in the forest',
+        class: 'gallery__block--v'
       },
       {
         src: '../assets/img/gallery/grey.jpg',
-        alt: 'grey hair'
+        alt: 'grey hair',
+        class: ''
       },
       {
         src: '../assets/img/gallery/main1.jpg',
-        alt: 'Sai and Zombie in red masks'
+        alt: 'Sai and Zombie in red masks',
+        class: 'gallery__block--v'
       },
       {
         src: '../assets/img/gallery/ny.jpg',
-        alt: 'New Year'
+        alt: 'New Year',
+        class: 'gallery__block--v'
       },
       {
         src: '../assets/img/gallery/sigil.jpg',
-        alt: 'red sigil'
+        alt: 'red sigil',
+        class: ''
       },
       {
         src: '../assets/img/gallery/r.jpg',
-        alt: 'Ritual picture'
+        alt: 'Ritual picture',
+        class: 'gallery__block--v'
       },
       {
         src: '../assets/img/gallery/w.jpg',
-        alt: 'Warzone picture'
+        alt: 'Warzone picture',
+        class: 'gallery__block--v'
       },
       {
         src: '../assets/img/gallery/Povyazki.jpg',
-        alt: 'closed eyes'
+        alt: 'closed eyes',
+        class: ''
       },
       {
         src: '../assets/img/gallery/redS.jpg',
-        alt: 'Devil'
+        alt: 'Devil',
+        class: 'gallery__block--v'
       },
       {
         src: '../assets/img/gallery/SaiMain.png',
-        alt: 'Sai Main'
+        alt: 'Sai Main',
+        class: 'gallery__block--v'
       },
       {
         src: '../assets/img/gallery/Vlad1.jpg',
-        alt: 'Vladyslav Zombie'
+        alt: 'Vladyslav Zombie',
+        class: 'gallery__block--v'
       },
       {
         src: '../assets/img/gallery/z2.jpg',
-        alt: 'Zombie Main'
+        alt: 'Zombie Main',
+        class: ''
       },
       {
         src: '../assets/img/gallery/warzone.jpg',
-        alt: 'frame from warzone clip'
+        alt: 'frame from warzone clip',
+        class: 'gallery__block--v'
       },
       {
         src: '../assets/img/gallery/zR2.jpg',
-        alt: 'Zombie'
+        alt: 'Zombie',
+        class: ''
       },
       {
         src: '../assets/img/gallery/zR.jpg',
-        alt: 'Zombie scream'
+        alt: 'Zombie scream',
+        class: ''
       },
     ]
 
@@ -92,7 +112,7 @@ block content
       h1(class='gallery__title') gallery
       div(class='gallery__content')
         for block in gallery
-          div(class='gallery__block')
+          div(class=['gallery__block'] class=block.class)
             div(class='gallery__img-wrapper')
-              img(class='gallery__img' src=`${block.src}` alt=`${block.alt}`)
+              img(class='gallery__img lazy blur' src=block.src data-src=block.src alt=block.alt)
 
