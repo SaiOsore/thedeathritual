@@ -24,6 +24,14 @@ body {
   background-color: $black;
 }
 
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #FF0000;
+}
+
 @font-face {
   font-family: 'DiabloHeavy';
   src: url('../assets/fonts/DiabloHeavy.eot');
@@ -101,7 +109,7 @@ video {
     position: fixed;
     width: 100%;
     left: 0;
-    z-index: 2;
+    z-index: 3;
     pointer-events: none;
     height: 240px;
     @include tabletL {
@@ -135,4 +143,18 @@ video {
 @keyframes opacityOn {
   from {opacity: 0;}
   to {opacity: 1;}
+<<<<<<< HEAD
 }
+=======
+}
+
+// .lazy {
+//   opacity: .4;
+//   will-change: opacity;
+//   transition: all 0.3s;
+// }
+
+// .lazy-loaded {
+//   opacity: 1;
+// }
+>>>>>>> 49add54a7fd4849137929fffd083baff41b47b1b

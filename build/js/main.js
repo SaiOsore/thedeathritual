@@ -217,6 +217,7 @@ wrapperMenu.addEventListener('click', function () {
   });
 })();
 "use strict";
+"use strict";
 
 function findVideos() {
   var videos = document.querySelectorAll('.video');
