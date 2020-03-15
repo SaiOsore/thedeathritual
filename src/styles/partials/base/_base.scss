@@ -117,3 +117,22 @@ video {
     background: linear-gradient(to bottom, transparent 0%, black 100%);
   }
 }
+
+.blur {
+  filter: blur(2px);
+  animation-name: opacityOn;
+  animation-duration: .5s;
+  animation-delay: .5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.no-blur {
+  filter: blur(0);
+  transition: filter .5s 2s ease-in;
+}
+
+@keyframes opacityOn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
