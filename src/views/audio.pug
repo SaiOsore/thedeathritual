@@ -2,13 +2,42 @@ extends layouts/default
 
 block variables
   - const title = 'The Death Ritual - Audio'
+  -
+    const audios = [
+      {
+        title: 'Zodiac',
+        src: './assets/music/Zodiac.mp3',
+        imgSrc: './assets/img/albums/Zodiac.jpg',
+      },
+      {
+        title: 'Warzone',
+        src: './assets/music/Warzone.mp3',
+        imgSrc: './assets/img/albums/Warzone.jpg',
+      },
+      {
+        title: 'Ritual',
+        src: './assets/music/Ritual.mp3',
+        imgSrc: './assets/img/albums/Ritual.jpg',
+      },
+      {
+        title: 'Buried Alive',
+        src: './assets/music/Buried Alive.mp3',
+        imgSrc: './assets/img/albums/BuriedAlive.jpg',
+      },
+    ]
 
 block content
-  div(class='audio')
-    div(class='audio__container')
-      h1(class='audio__title') Audio
-      div(class='audio__content')
-        div(class='audio__block')
-          audio(class='audio__control' controls='' preload='auto' tabindex='0' src='./assets/music/Ritual.mp3')
-            source(src='./assets/music/ritual.mp3')
+  div(class='audios')
+    div(class='audios__container')
+      h1(class='audios__title') Audio
+      div(class='audios__content')
+        for audio in audios
+          div(class='audio')
+            div(class='audio__block audio__block--first')
+              div(class='audio__img-wrapper')
+                img(class='audio__img' src=audio.imgSrc alt='cover')
+            div(class='audio__block audio__block--second')
+              h2(class='audio__title') #{audio.title}
+              audio(class='audio__control' controls='' preload='auto' tabindex='0' src=audio.src)
+                source(src=audio.src)
 

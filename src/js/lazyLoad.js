@@ -1,4 +1,4 @@
-let images = [...document.querySelectorAll('.lazy')]
+let images = [...document.querySelectorAll('.lazy')];
 
 const interactSettings = {
   //root: document.querySelector('.gallery__content'),
@@ -15,6 +15,6 @@ function onIntersection(imageEntites) {
   })
 }
 
-let observer = new IntersectionObserver(onIntersection, interactSettings)
+let observer = new IntersectionObserver(onIntersection, interactSettings);
 
-images.forEach(image => observer.observe(image))
+images.forEach(image => observer.observe(image));

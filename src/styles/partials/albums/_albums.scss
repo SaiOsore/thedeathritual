@@ -17,6 +17,15 @@
   position: relative;
   display: block;
   margin: 0 auto;
+  &:hover &__title {
+    color: $accent;
+  }
+  &:hover &__date {
+    color: $main;
+  }
+  &:hover &__img-wrapper {
+    box-shadow: $shadow-down;
+  }
   &__img-wrapper {
     min-height: 220px;
   }
@@ -30,8 +39,10 @@
   }
   &__title {
     margin-bottom: 10px;
+    transition: color .2s;
   }
   &__date {
     font-family: 'Digital-7';
+    transition: color .2s;
   }
 }
