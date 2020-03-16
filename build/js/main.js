@@ -44,6 +44,19 @@ var tlLogo = anime.timeline({
 });
 tlLogo.add(preloaderAnim).add(Logo);
 tlLogo.play();
+var preloaderCounter = document.querySelector('.preloader__counter');
+var counter = {
+  nums: '0%'
+};
+anime({
+  targets: counter,
+  nums: '100%',
+  round: 1,
+  easing: 'linear',
+  update: function update() {
+    preloaderCounter.innerHTML = counter.nums;
+  }
+});
 "use strict";
 
 var canvas = document.querySelector('.home__canvas');
