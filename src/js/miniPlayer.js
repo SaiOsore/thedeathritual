@@ -3,7 +3,12 @@ const playerBtn = document.querySelector('.mini-player__button'),
       pauseIcon = document.querySelector('.mini-player__pause');
 let playing = false;
 
-var player = document.querySelector('.mini-player__audio');
+if(location.pathname === '/audio.html') {
+  playerBtn.disabled = true;
+  playerBtn.style.opacity = '.1';
+}
+
+let player = document.querySelector('.mini-player__audio');
 player.preload = 'auto';
 player.addEventListener('ended', () => {
   playerBtn.classList.toggle('mini-player__button--active');

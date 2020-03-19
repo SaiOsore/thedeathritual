@@ -67,16 +67,17 @@ function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.
 
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
 
-var audios = _toConsumableArray(document.querySelectorAll('.audio'));
+var audioBlock = _toConsumableArray(document.querySelectorAll('.audio'));
+
+var audio = _toConsumableArray(document.querySelectorAll('.audio__control'));
 
 var activeClassToggle = function activeClassToggle(el) {
   el.classList.toggle('active-color');
 };
 
-audios.forEach(function (audioBlock) {
-  console.log(audioBlock);
-  var audioTitle = audioBlock.querySelector('.audio__title');
-  var audio = audioBlock.querySelector('.audio__control');
+audioBlock.forEach(function (block) {
+  var audioTitle = block.querySelector('.audio__title');
+  var audio = block.querySelector('.audio__control');
   audio.addEventListener('play', function () {
     activeClassToggle(audioTitle);
   });
@@ -84,6 +85,13 @@ audios.forEach(function (audioBlock) {
     activeClassToggle(audioTitle);
   });
 });
+document.addEventListener('play', function (e) {
+  for (var i = 0; i < audio.length; i++) {
+    if (audio[i] != e.target) {
+      audio[i].pause();
+    }
+  }
+}, true);
 "use strict";
 
 var canvas = document.querySelector('.home__canvas');
@@ -210,6 +218,12 @@ var playerBtn = document.querySelector('.mini-player__button'),
     playIcon = document.querySelector('.mini-player__play'),
     pauseIcon = document.querySelector('.mini-player__pause');
 var playing = false;
+
+if (location.pathname === '/audio.html') {
+  playerBtn.disabled = true;
+  playerBtn.style.opacity = '.1';
+}
+
 var player = document.querySelector('.mini-player__audio');
 player.preload = 'auto';
 player.addEventListener('ended', function () {
@@ -240,23 +254,22 @@ wrapperMenu.addEventListener('click', function () {
 });
 "use strict";
 
-(function () {
-  var downloadBtn = document.querySelector('.downloadMusicJs'),
-      downloadPopup = document.querySelector('.popup-download'),
-      downloadCloseBtn = document.querySelector('.popup-download__close');
-  downloadBtn.addEventListener('click', function () {
-    downloadPopup.style.display = 'flex';
-    document.addEventListener('mousedown', function (e) {
-      if (e.target.closest('.popup-download') === null) {
-        downloadPopup.style.display = 'none';
-      }
-    });
+var downloadBtn = document.querySelector('.downloadMusicJs'),
+    downloadPopup = document.querySelector('.popup-download'),
+    downloadCloseBtn = document.querySelector('.popup-download__close');
+
+var showDownloadPopup = function showDownloadPopup() {
+  downloadPopup.style.display = 'flex';
+  document.addEventListener('mousedown', function (e) {
+    if (e.target.closest('.popup-download') === null) {
+      downloadPopup.style.display = 'none';
+    }
   });
-  downloadCloseBtn.addEventListener('click', function () {
-    downloadPopup.style.display = 'none';
-  });
-})();
-"use strict";
+};
+
+downloadCloseBtn.addEventListener('click', function () {
+  downloadPopup.style.display = 'none';
+});
 "use strict";
 
 function findVideos() {

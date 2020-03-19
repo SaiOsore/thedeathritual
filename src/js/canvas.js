@@ -1,4 +1,3 @@
-
 const canvas = document.querySelector('.home__canvas');
 
 if(canvas) {

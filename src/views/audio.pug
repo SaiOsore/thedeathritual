@@ -27,17 +27,17 @@ block variables
     ]
 
 block content
-  div(class='audios')
+  div(class='audios' data-play=index)
     div(class='audios__container')
       h1(class='audios__title') Audio
       div(class='audios__content')
-        for audio in audios
+        for audio, index in audios
           div(class='audio')
             div(class='audio__block audio__block--first')
               div(class='audio__img-wrapper')
                 img(class='audio__img' src=audio.imgSrc alt='cover')
             div(class='audio__block audio__block--second')
               h2(class='audio__title') #{audio.title}
-              audio(class='audio__control' controls='' preload='auto' tabindex='0' src=audio.src)
+              audio(class='audio__control' controls='' preload='auto' tabindex='0' src=audio.src data-play=index)
                 source(src=audio.src)
 

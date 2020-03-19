@@ -72,7 +72,7 @@
           </svg>
         </button>
         <div class="mini-player">
-          <audio class="mini-player__audio" preload="auto" tabindex="0" src="./assets/music/Ritual.mp3">
+          <audio class="mini-player__audio audio__control" preload="auto" tabindex="0" src="./assets/music/Ritual.mp3">
             <source src="./assets/music/ritual.mp3">
           </audio>
         </div>
@@ -95,19 +95,19 @@
           </div>
           <div class="social social--right">
             <div class="social__links social__links--right"><a class="social__link" href="https://soundcloud.com/death_ritual" target="_blank">soundcloud</a><a class="social__link" href="https://www.youtube.com/channel/UCrvpG3h4f6ScHzenfhhSt9Q" target="_blank">youtube</a>
-              <button class="social__link downloadMusicJs">download</button>
+              <button class="social__link downloadMusicJs" onclick="showDownloadPopup()">download</button>
             </div>
             <button class="social__button" type="button"><span class="social__icon"></span><span>L</span><span>i</span><span>s</span><span>t</span><span>e</span><span>n</span></button>
           </div>
         </div>
       </div>
     </header>
-    <div class="popup-download" style="visibility: visible; opacity: 1;"><span>Download EP<br>&#x9;&quot;The Death Ritual&quot;?</span><a class="popup-download__yes" href="/assets/music/TheDeathRitual.rar" download="The Death Ritual">Yes</a>
+    <div class="popup-download"><span>Download EP<br>&#x9;&quot;The Death Ritual&quot;?</span><a class="popup-download__yes" href="./assets/music/TheDeathRitual.rar" download="The Death Ritual">Yes</a>
       <button class="popup-download__close">&times</button>
     </div>
     <div class="social social--right">
       <div class="social__links social__links--right"><a class="social__link" href="https://soundcloud.com/death_ritual" target="_blank">soundcloud</a><a class="social__link" href="https://www.youtube.com/channel/UCrvpG3h4f6ScHzenfhhSt9Q" target="_blank">youtube</a>
-        <button class="social__link downloadMusicJs">download</button>
+        <button class="social__link downloadMusicJs" onclick="showDownloadPopup()">download</button>
       </div>
       <button class="social__button" type="button"><span class="social__icon"></span><span>L</span><span>i</span><span>s</span><span>t</span><span>e</span><span>n</span></button>
     </div>
