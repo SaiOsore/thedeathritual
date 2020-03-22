@@ -3,10 +3,6 @@
 //preloader
 var preloader = document.querySelector('.preloader');
 
-var bodyFixed = function bodyFixed() {
-  document.body.classList.add('body-fixed');
-};
-
 var isPreloaderLoaded = function isPreloaderLoaded() {
   document.body.classList.remove('body-fixed');
   preloader.classList.add('hidden');
@@ -21,29 +17,16 @@ var preloaderAnim = {
     easing: 'linear'
   },
   offset: '+=100',
-  begin: function begin() {
-    bodyFixed();
-  },
   complete: function complete() {
     isPreloaderLoaded();
   }
 };
-var Logo = {
-  targets: '.preloader svg path',
-  opacity: '0',
-  easing: 'easeInOutSine',
-  duration: 1500,
-  delay: function delay(el, i) {
-    return i * 250;
-  },
-  direction: 'alternate'
-};
-var tlLogo = anime.timeline({
+var tlPreloader = anime.timeline({
   autoplay: false,
   duration: 500
 });
-tlLogo.add(preloaderAnim).add(Logo);
-tlLogo.play();
+tlPreloader.add(preloaderAnim);
+tlPreloader.play();
 var preloaderCounter = document.querySelector('.preloader__counter');
 var counter = {
   nums: '0%'
@@ -194,18 +177,19 @@ var interactSettings = {//root: document.querySelector('.gallery__content'),
   // rootMargin: '0px 0px 200px 0px'
 };
 
-function onIntersection(imageEntites) {
+var onIntersection = function onIntersection(imageEntites) {
   imageEntites.forEach(function (image) {
     if (image.isIntersecting) {
       observer.unobserve(image.target);
       image.target.src = image.target.dataset.src;
 
       image.target.onload = function () {
-        return image.target.classList.add('no-blur');
+        image.target.classList.add('no-blur');
+        image.target.classList.remove('blur');
       };
     }
   });
-}
+};
 
 var observer = new IntersectionObserver(onIntersection, interactSettings);
 images.forEach(function (image) {

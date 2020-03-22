@@ -1,10 +1,6 @@
 //preloader
 const preloader = document.querySelector('.preloader');
 
-const bodyFixed = () => {
-  document.body.classList.add('body-fixed');
-};
-
 const isPreloaderLoaded = () => {
   document.body.classList.remove('body-fixed');
   preloader.classList.add('hidden');
@@ -19,32 +15,19 @@ const preloaderAnim = {
     easing: 'linear',
   },
   offset: '+=100',
-  begin: function() {
-    bodyFixed();
-  },
   complete: function () {
     isPreloaderLoaded();
   }
 };
 
-const Logo = {
-  targets: '.preloader svg path',
-  opacity: '0',
-  easing: 'easeInOutSine',
-  duration: 1500,
-  delay: function(el, i) { return i * 250 },
-  direction: 'alternate',
-};
-
-const tlLogo = anime.timeline({
+const tlPreloader = anime.timeline({
   autoplay: false,
   duration: 500
 });
 
-tlLogo
+tlPreloader
 .add(preloaderAnim)
-.add(Logo)
-tlLogo.play();
+tlPreloader.play();
 
 
 var preloaderCounter = document.querySelector('.preloader__counter');
