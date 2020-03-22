@@ -1,5 +1,10 @@
 .body-fixed {
   overflow: hidden;
+  position: fixed;
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
 
 .active-block {
