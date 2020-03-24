@@ -4,7 +4,7 @@ module.exports = function () {
             $.browsersync.init({
                 server: "./build/",
                 tunnel: false,
-                port: 9000
+                port: 9000,
             });
             res();
         });
