@@ -15,7 +15,7 @@ const preloaderAnim = {
     easing: 'linear',
   },
   offset: '+=100',
-  complete: function () {
+  complete: function() {
     isPreloaderLoaded();
   }
 };
@@ -28,7 +28,6 @@ const tlPreloader = anime.timeline({
 tlPreloader
 .add(preloaderAnim)
 tlPreloader.play();
-
 
 var preloaderCounter = document.querySelector('.preloader__counter');
 
