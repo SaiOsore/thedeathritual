@@ -25,9 +25,11 @@ const tlPreloader = anime.timeline({
   duration: 500
 });
 
-tlPreloader
-.add(preloaderAnim)
-tlPreloader.play();
+window.onload = function() {
+  tlPreloader
+    .add(preloaderAnim)
+    tlPreloader.play();
+}
 
 var preloaderCounter = document.querySelector('.preloader__counter');
 

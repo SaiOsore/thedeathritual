@@ -1,27 +1,35 @@
+import { shuffle } from './helpers.js';
+
 const canvas = document.querySelector('.home__canvas');
+const homeImg = document.querySelector('.home__img');
 
 if(canvas) {
 
   const context = canvas.getContext('2d');
   const lines = [];
 
-  const colors = [
-    [ '#000', '#fff' ],
-  ];
+  let colors = [ '#000', '#fff', 'red' ];
 
-  var colorIndex = -1;
+  let colorIndex = -1;
 
-  var step = 0,
+  let step = 0,
       width = 0,
       height = 0;
 
-  // document.ontouchstart = color;
-  // document.onmousedown = color;
   window.onresize = setup;
 
   setup();
   color();
   update();
+
+  if(homeImg) {
+    homeImg.addEventListener('click', () => {
+      shuffle(colors);
+    });
+    homeImg.addEventListener('touchstart', () => {
+      shuffle(colors);
+    });
+  }
 
   function setup() {
     
@@ -40,10 +48,10 @@ if(canvas) {
       let line = { points: [], ran: 0.2 + Math.random() * 0.7 };
 
       for( let h = 0; h < pointCount; h++ ) {
-        line.points.push( {
+        line.points.push({
           nx: h * spacingH,
           ny: v * spacingV
-        } );
+        });
       }
       
       line.points.push( {
@@ -58,10 +66,8 @@ if(canvas) {
   }
 
   function color() {
-
     colorIndex = ( ++colorIndex ) % colors.length;
-    canvas.style.backgroundColor = colors[colorIndex][0];
-
+    canvas.style.backgroundColor = colors[0];
   }
 
   function update() {
@@ -74,10 +80,10 @@ if(canvas) {
     context.clearRect( 0, 0, width, height );
     
     context.lineWidth = 2;
-    context.strokeStyle = colors[colorIndex][1];
-    context.fillStyle = colors[colorIndex][0];
+    context.strokeStyle = colors[1];
+    context.fillStyle = colors[0];
     
-    lines.forEach( ( line, v ) => {
+    lines.forEach(( line, v ) => {
       
       context.beginPath();
       
@@ -88,7 +94,7 @@ if(canvas) {
         
       } );
       
-      line.points.forEach( ( point, h ) => {
+      line.points.forEach(( point, h ) => {
         
         let nextPoint = line.points[ h + 1 ];
         
@@ -101,7 +107,7 @@ if(canvas) {
           context.quadraticCurveTo( point.x, point.y, cpx, cpy );
         }
         
-      } );
+      });
       
       context.stroke();
       
@@ -110,7 +116,7 @@ if(canvas) {
       context.closePath();
       context.fill();
       
-    } );
+    });
 
     requestAnimationFrame( update );
 
