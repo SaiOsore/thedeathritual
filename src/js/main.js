@@ -7,3 +7,4 @@ import miniPlayer from './miniPlayer';
 import mobileMenu from './mobileMenu';
 import popup from './popup';
 import video from './video';
+import nav from './nav';

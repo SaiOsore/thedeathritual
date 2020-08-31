@@ -31,21 +31,6 @@
     letter-spacing: .3em;
     color: $second;
     @extend .line-hover;
-    // &:before {
-    //   content: '';
-    //   position: absolute;
-    //   bottom: 0;
-    //   right: 0;
-    //   width: 0;
-    //   height: 10px;
-    //   background-color: $active;
-    //   transition: .4s;
-    //   z-index: -1;
-    // }
-    // &:hover:before {
-    //   width: 100%;
-    //   left: 0;
-    // }
     @include laptopL {
       font-size: 1rem;
     }

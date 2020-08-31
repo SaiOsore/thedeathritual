@@ -162,3 +162,17 @@ video {
     left: 0;
   }
 }
+
+.line {
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 10px;
+    background-color: $active;
+    transition: .4s;
+    z-index: -1;
+  }
+}
