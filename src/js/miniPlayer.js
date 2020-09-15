@@ -8,7 +8,7 @@ if(location.pathname === '/audio.html') {
   playerBtn.style.opacity = '.1';
 }
 
-let player = document.querySelector('.mini-player__audio');
+const player = document.querySelector('.mini-player__audio');
 player.preload = 'auto';
 player.addEventListener('ended', () => {
   playerBtn.classList.toggle('mini-player__button--active');

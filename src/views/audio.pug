@@ -39,6 +39,6 @@ block content
                 img(class='audio__img' src=audio.imgSrc alt='cover')
             div(class='audio__block audio__block--second')
               h2(class='audio__title') #{audio.title}
-              audio(class='audio__control' controls='' preload='auto' tabindex='0' src=audio.src data-play=index)
+              audio(class='audio__control' controls='' preload='none' tabindex='0' src=audio.src data-play=index)
                 source(src=audio.src)
 
