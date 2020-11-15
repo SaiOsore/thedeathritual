@@ -16,7 +16,7 @@
 .album {
   position: relative;
   display: block;
-  margin: 0 auto;
+  padding: 20px;
   &:hover &__title {
     color: $accent;
   }
@@ -27,12 +27,11 @@
     box-shadow: $shadow-down;
   }
   &__img-wrapper {
-    min-height: 220px;
+    margin-bottom: 15px;
   }
   &__img {
     display: block;
     max-width: 100%;
-    margin-bottom: 5px;
   }
   &__descr {
     color: $white;

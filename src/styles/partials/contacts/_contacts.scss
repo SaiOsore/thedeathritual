@@ -1,5 +1,6 @@
 .contacts {
   @extend .page;
+  padding: 0;
   &__container {
     @extend .page__container;
   }
