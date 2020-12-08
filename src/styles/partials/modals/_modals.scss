@@ -1,0 +1,38 @@
+.modal {
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .5s ease-out;
+  &--open {
+    opacity: 1;
+    pointer-events: all;
+    cursor: pointer;
+    z-index: 200;
+  }
+  &__img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 70%;
+    width: auto;
+    cursor: auto;
+    @include mobileL {
+      height: auto;
+      max-width: 90%;
+    }
+  }
+  &__descr {
+    color: $white;
+    font-size: $xs;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, -5%);
+  }
+}

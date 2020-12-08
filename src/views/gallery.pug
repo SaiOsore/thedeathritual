@@ -126,6 +126,7 @@ block variables
         class: ''
       },
     ]
+
 block content
   div(class='gallery')
     div(class='gallery__container')
@@ -135,3 +136,6 @@ block content
           div(class=['gallery__block'] class=block.class)
             div(class='gallery__img-wrapper')
               img(class='gallery__img lazy blur' src=block.srcThumb data-src=block.src alt=block.alt)
+    div(class='modal')
+      img(class='modal__img' src='' alt='')
+      p(class='modal__descr')

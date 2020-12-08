@@ -31,9 +31,9 @@ window.onload = function() {
     tlPreloader.play();
 }
 
-var preloaderCounter = document.querySelector('.preloader__counter');
+const preloaderCounter = document.querySelector('.preloader__counter');
 
-var counter = {
+const counter = {
   nums: '0%',
 }
 
